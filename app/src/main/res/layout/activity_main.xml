@@ -8,7 +8,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:text="@string/hello_world"
+        android:id="@+id/textView" />
 
     <!-- view for AdMob Banner Ad -->
     <com.google.android.gms.ads.AdView
@@ -19,5 +20,16 @@
         android:layout_centerHorizontal="true"
         ads:adSize="BANNER"
         ads:adUnitId="@string/banner_ad_unit_id" />
+
+    <com.joanzapata.iconify.widget.IconTextView
+        android:text="{fa-info-circle}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/view"
+        android:layout_above="@+id/adView"
+        android:layout_alignParentLeft="true"
+        android:textSize="40sp"
+        android:layout_marginRight="19dp"
+        android:layout_marginEnd="19dp" />
 
 </RelativeLayout>
