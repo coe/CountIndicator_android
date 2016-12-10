@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.0"
     defaultConfig {
         applicationId "jp.co.rleaning.countindicator"
-        minSdkVersion 9
+        minSdkVersion 11
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -22,6 +22,10 @@ android {
         resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.1'
     }
 
+    dataBinding {
+        enabled = true
+    }
+
 }
 
 dependencies {
@@ -29,18 +33,27 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.0.0'
-    compile 'com.google.android.gms:play-services-ads:9.8.0'
-    compile 'com.joanzapata.iconify:android-iconify-fontawesome:2.2.2' // (v4.5)
-    compile 'com.joanzapata.iconify:android-iconify-entypo:2.2.2' // (v3,2015)
-    compile 'com.joanzapata.iconify:android-iconify-typicons:2.2.2' // (v2.0.7)
-    compile 'com.joanzapata.iconify:android-iconify-material:2.2.2' // (v2.0.0)
-    compile 'com.joanzapata.iconify:android-iconify-material-community:2.2.2' // (v1.4.57)
-    compile 'com.joanzapata.iconify:android-iconify-meteocons:2.2.2' // (latest)
-    compile 'com.joanzapata.iconify:android-iconify-weathericons:2.2.2' // (v2.0)
-    compile 'com.joanzapata.iconify:android-iconify-simplelineicons:2.2.2' // (v1.0.0)
-    compile 'com.joanzapata.iconify:android-iconify-ionicons:2.2.2' // (v2.0.1)
-    compile('de.psdev.licensesdialog:licensesdialog:1.8.1')
+    // (v4.5)
+    // (v3,2015)
+    // (v2.0.7)
+    // (v2.0.0)
+    // (v1.4.57)
+    // (latest)
+    // (v2.0)
+    // (v1.0.0)
+    // (v2.0.1)
 
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile 'com.google.android.gms:play-services-ads:9.8.0'
+    compile 'com.joanzapata.iconify:android-iconify-fontawesome:2.2.2'
+    compile 'com.joanzapata.iconify:android-iconify-entypo:2.2.2'
+    compile 'com.joanzapata.iconify:android-iconify-typicons:2.2.2'
+    compile 'com.joanzapata.iconify:android-iconify-material:2.2.2'
+    compile 'com.joanzapata.iconify:android-iconify-material-community:2.2.2'
+    compile 'com.joanzapata.iconify:android-iconify-meteocons:2.2.2'
+    compile 'com.joanzapata.iconify:android-iconify-weathericons:2.2.2'
+    compile 'com.joanzapata.iconify:android-iconify-simplelineicons:2.2.2'
+    compile 'com.joanzapata.iconify:android-iconify-ionicons:2.2.2'
+    compile 'de.psdev.licensesdialog:licensesdialog:1.8.1'
     testCompile 'junit:junit:4.12'
 }

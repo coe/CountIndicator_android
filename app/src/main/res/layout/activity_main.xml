@@ -1,35 +1,56 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="jp.co.rleaning.countindicator.MainActivity">
+<layout>
+    <data>
+        <variable name="mainactivity" type="jp.co.rleaning.countindicator.MainActivity"/>
+    </data>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="jp.co.rleaning.countindicator.MainActivity"
+        >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world"
-        android:id="@+id/textView" />
+        <!-- view for AdMob Banner Ad -->
+        <Button
+            android:onClick="@{mainactivity.onClickCountIndicator}"
+            android:text="@string/count_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:id="@+id/button2" />
 
-    <!-- view for AdMob Banner Ad -->
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/banner_ad_unit_id" />
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/banner_ad_unit_id" />
 
-    <com.joanzapata.iconify.widget.IconTextView
-        android:text="{fa-info-circle}"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/view"
-        android:layout_above="@+id/adView"
-        android:layout_alignParentLeft="true"
-        android:textSize="40sp"
-        android:layout_marginRight="19dp"
-        android:layout_marginEnd="19dp" />
+        <com.joanzapata.iconify.widget.IconTextView
+            android:text="{fa-info-circle}"
+            android:textColor="@android:color/darker_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/view"
+            android:layout_above="@+id/adView"
+            android:layout_alignParentLeft="true"
+            android:textSize="40sp"
+            android:layout_marginRight="19dp"
+            android:layout_marginEnd="19dp" />
 
-</RelativeLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ads:srcCompat="@drawable/rl_logo"
+            android:layout_above="@+id/adView"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/imageView" />
+
+    </RelativeLayout>
+</layout>
+
