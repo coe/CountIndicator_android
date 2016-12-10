@@ -2,6 +2,11 @@
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     >
+    <data>
+        <variable
+            name="presenter"
+            type="jp.co.rleaning.countindicator.presenter.ScorePresenter"/>
+    </data>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -120,7 +125,7 @@
             android:id="@+id/imageView2" />
 
         <Button
-            android:text="Clear"
+            android:text="@string/clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/imageView2"
@@ -139,26 +144,25 @@
             android:id="@+id/inning_layout">
 
             <Button
-                android:text="-"
+                android:text="@string/minus"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/button3"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
+                android:onClick="@{() -> presenter.onClickInningMinus()}"
                 android:layout_marginLeft="13dp"
                 android:layout_marginStart="13dp"
-                android:id="@+id/button4"
+                android:id="@+id/button_inning_minus"
                 android:layout_weight="1" />
 
             <TextView
-                android:text="TextView"
+                android:text="@string/inning_default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView"
+                android:id="@+id/inning_textView"
                 android:layout_weight="1" />
 
             <Button
-                android:text="+"
+                android:text="@string/plus"
+                android:onClick="@{() -> presenter.onClickInningPlus()}"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/button5"
@@ -174,26 +178,23 @@
             android:layout_alignParentStart="true">
 
             <Button
-                android:text="-"
+                android:text="@string/minus"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/button3"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
                 android:layout_marginLeft="13dp"
                 android:layout_marginStart="13dp"
-                android:id="@+id/button6"
+                android:id="@+id/button_score_minus"
                 android:layout_weight="1" />
 
             <TextView
-                android:text="TextView"
+                android:text="@string/score_default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView1"
                 android:layout_weight="1" />
 
             <Button
-                android:text="+"
+                android:text="@string/plus"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/button7"

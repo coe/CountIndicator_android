@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">カウントインジケーター</string>
+    <string name="score_default">0点</string>
+    <string name="inning">%1$d回</string>
+    <string name="inning_default">1回</string>
+    <string name="count_indicator">カウントインジケーター</string>
+    <string name="clear">クリア</string>
+    <string name="bottom">裏</string>
+    <string name="top">表</string>
+    <string name="title_activity_score">スコア</string>
+</resources>

@@ -13,6 +13,8 @@ import com.joanzapata.iconify.fonts.SimpleLineIconsModule;
 import com.joanzapata.iconify.fonts.TypiconsModule;
 import com.joanzapata.iconify.fonts.WeathericonsModule;
 
+import timber.log.Timber;
+
 /**
  * Created by user on 2016/11/13.
  */
@@ -21,6 +23,11 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        if (BuildConfig.DEBUG) {
+            Timber.plant(new Timber.DebugTree());
+        }
+
         Iconify
                 .with(new FontAwesomeModule())
                 .with(new EntypoModule())

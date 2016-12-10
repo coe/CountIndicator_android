@@ -11,17 +11,21 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 import jp.co.rleaning.countindicator.databinding.ActivityScoreBinding;
+import jp.co.rleaning.countindicator.presenter.ScorePresenter;
+import timber.log.Timber;
 
-public class ScoreActivity extends AppCompatActivity {
+public class ScoreActivity extends AppCompatActivity implements ScorePresenter {
     // Remove the below line after defining your own ad unit ID.
     private static final String TOAST_TEXT = "Test ads are being shown. "
             + "To show live ads, replace the ad unit ID in res/values/strings.xml with your own ad unit ID.";
-
+    int mInning = 1;
+    ActivityScoreBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityScoreBinding binding = DataBindingUtil.setContentView(this,R.layout.activity_score);
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_score);
+        binding.setPresenter(this);
 
 
         // Load an ad into the AdMob banner view.
@@ -56,4 +60,81 @@ public class ScoreActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onClickInningPlus() {
+        Timber.d("onClickInningPlus");
+        mInning++;
+        if (mInning > 99) {
+            mInning = 99;
+        }
+        binding.inningTextView.setText(getString(R.string.inning,mInning));
+    }
+
+    /**
+     * イニングの-ボタンを押した時
+     */
+    @Override
+    public void onClickInningMinus() {
+        mInning--;
+        if (mInning < 1) {
+            mInning = 1;
+        }
+        binding.inningTextView.setText(getString(R.string.inning,mInning));
+    }
+
+    /**
+     * スコアの+ボタンを押した時
+     */
+    @Override
+    public void onClickScorePlus() {
+
+    }
+
+    /**
+     * スコアの-ボタンを押した時
+     */
+    @Override
+    public void onClickScoreMinus() {
+
+    }
+
+    /**
+     * Bボタンを押した時
+     */
+    @Override
+    public void onClickB() {
+
+    }
+
+    /**
+     * Sボタンを押した時
+     */
+    @Override
+    public void onClickS() {
+
+    }
+
+    /**
+     * Oボタンを押した時
+     */
+    @Override
+    public void onClickO() {
+
+    }
+
+    /**
+     * クリアボタンを押した時
+     */
+    @Override
+    public void onClickClear() {
+
+    }
+
+    /**
+     * チェックボタンを押した時
+     */
+    @Override
+    public void onCheckedChangedGroup() {
+
+    }
 }
