@@ -132,7 +132,7 @@
             android:layout_alignRight="@+id/adView"
             android:layout_alignEnd="@+id/adView"
             android:layout_marginBottom="14dp"
-            android:id="@+id/button3" />
+            android:id="@+id/buttonClear" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -173,7 +173,7 @@
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/button3"
+            android:layout_alignTop="@+id/buttonClear"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true">
 
@@ -204,20 +204,22 @@
 
         <RadioGroup
             android:id="@+id/toggleGroup"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:weightSum="7"
             android:orientation="vertical"
-            android:layout_above="@+id/button3"
-            android:layout_alignRight="@+id/button3"
-            android:layout_alignEnd="@+id/button3"
+            android:layout_above="@+id/buttonClear"
+            android:layout_alignRight="@+id/buttonClear"
+            android:layout_alignEnd="@+id/buttonClear"
+            android:layout_alignStart="@+id/buttonClear"
             android:layout_marginRight="19dp"
             android:layout_marginEnd="19dp"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="16dp"
+            android:layout_alignLeft="@+id/buttonClear">
 
             <RadioButton
                 android:text="@string/top"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:id="@+id/radiobutton_online"
@@ -228,7 +230,7 @@
             <RadioButton
                 android:checked="true"
                 android:text="@string/bottom"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:id="@+id/radiobutton_offline"
