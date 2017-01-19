@@ -31,6 +31,7 @@
     <string name="plus" translatable="false">+</string>
     <string name="minus" translatable="false">-</string>
     <string name="score_default">Score 0</string>
+    <string name="score">Score %1$d</string>
     <string name="clear">Clear</string>
 
 </resources>
