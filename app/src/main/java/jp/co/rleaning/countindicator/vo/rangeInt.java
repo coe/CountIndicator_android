@@ -15,14 +15,9 @@ public class rangeInt {
 
 
     public rangeInt(int max, int min, int value) {
-        // TODO: valueが範囲外なら例外を投げる
         this.max = max;
         this.min = min;
         this.value = value;
-        Log.d(TAG, "max:" + max);
-        Log.d(TAG, "min:" + min);
-        Log.d(TAG, "value:" + value);
-
     }
 
 
@@ -44,9 +39,7 @@ public class rangeInt {
      */
     public int increment() {
         value++;
-        Log.d("hoge", value + "");
         if (value > max) {
-            Log.d("hoge", "overshoot!");
             value = max;
         }
         return value;
@@ -58,9 +51,7 @@ public class rangeInt {
      */
     public int decrement() {
         value--;
-        Log.d("hoge", value + "");
         if (value < min) {
-            Log.d("hoge", "overshoot!");
             value = min;
         }
         return value;
