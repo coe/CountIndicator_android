@@ -18,7 +18,10 @@ public class ScoreActivity extends AppCompatActivity implements ScorePresenter {
     // Remove the below line after defining your own ad unit ID.
     private static final String TOAST_TEXT = "Test ads are being shown. "
             + "To show live ads, replace the ad unit ID in res/values/strings.xml with your own ad unit ID.";
-    int mInning = 1;
+    private final int INNING_DEFAULT = 1;
+    private final int SCORE_DEFAULT = 0;
+    int mInning = INNING_DEFAULT;
+    int mScore = SCORE_DEFAULT;
     ActivityScoreBinding binding;
 
     @Override
@@ -62,7 +65,6 @@ public class ScoreActivity extends AppCompatActivity implements ScorePresenter {
 
     @Override
     public void onClickInningPlus() {
-        Timber.d("onClickInningPlus");
         mInning++;
         if (mInning > 99) {
             mInning = 99;
@@ -87,6 +89,12 @@ public class ScoreActivity extends AppCompatActivity implements ScorePresenter {
      */
     @Override
     public void onClickScorePlus() {
+        mScore++;
+        if (mScore > 99) {
+            mScore =99;
+        }
+        binding.scoreTextView.setText(getString(R.string.score, mScore));
+
 
     }
 
@@ -95,6 +103,11 @@ public class ScoreActivity extends AppCompatActivity implements ScorePresenter {
      */
     @Override
     public void onClickScoreMinus() {
+        mScore--;
+        if (mScore < 0) {
+            mScore = 0;
+        }
+        binding.scoreTextView.setText(getString(R.string.score, mScore));
 
     }
 

@@ -184,13 +184,14 @@
                 android:layout_marginLeft="13dp"
                 android:layout_marginStart="13dp"
                 android:id="@+id/button_score_minus"
+                android:onClick="@{ () -> presenter.onClickScoreMinus()}"
                 android:layout_weight="1" />
 
             <TextView
                 android:text="@string/score_default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView1"
+                android:id="@+id/score_textView"
                 android:layout_weight="1" />
 
             <Button
@@ -198,6 +199,7 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/button7"
+                android:onClick="@{ () -> presenter.onClickScorePlus()}"
                 android:layout_weight="1" />
         </LinearLayout>
 

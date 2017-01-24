@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">カウントインジケーター</string>
+    <string name="score">%1$d点</string>
     <string name="score_default">0点</string>
     <string name="inning">%1$d回</string>
     <string name="inning_default">1回</string>
