@@ -5,19 +5,15 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 import jp.co.rleaning.countindicator.databinding.ActivityScoreBinding;
 import jp.co.rleaning.countindicator.presenter.ScorePresenter;
-import timber.log.Timber;
 
 public class ScoreActivity extends AppCompatActivity implements ScorePresenter {
     // Remove the below line after defining your own ad unit ID.
-    private static final String TOAST_TEXT = "Test ads are being shown. "
-            + "To show live ads, replace the ad unit ID in res/values/strings.xml with your own ad unit ID.";
     private final int INNING_DEFAULT = 1;
     private final int SCORE_DEFAULT = 0;
     int mInning = INNING_DEFAULT;
@@ -38,7 +34,6 @@ public class ScoreActivity extends AppCompatActivity implements ScorePresenter {
         adView.loadAd(adRequest);
 
         // Toasts the test ad message on the screen. Remove this after defining your own ad unit ID.
-        Toast.makeText(this, TOAST_TEXT, Toast.LENGTH_LONG).show();
     }
 
 
