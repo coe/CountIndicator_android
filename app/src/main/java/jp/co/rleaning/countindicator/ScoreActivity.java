@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
@@ -22,8 +23,13 @@ import jp.co.rleaning.countindicator.presenter.ScorePresenter;
 
 public class ScoreActivity extends AppCompatActivity implements ScorePresenter {
     // Remove the below line after defining your own ad unit ID.
-    private static final String TOAST_TEXT = "Test ads are being shown. "
-            + "To show live ads, replace the ad unit ID in res/values/strings.xml with your own ad unit ID.";
+
+    private final int INNING_DEFAULT = 1;
+    private final int SCORE_DEFAULT = 0;
+    int mInning = INNING_DEFAULT;
+    int mScore = SCORE_DEFAULT;
+    ActivityScoreBinding binding;
+
 
     ActivityScoreBinding binding;
     int mInning = 1;
@@ -45,7 +51,6 @@ public class ScoreActivity extends AppCompatActivity implements ScorePresenter {
         adView.loadAd(adRequest);
 
         // Toasts the test ad message on the screen. Remove this after defining your own ad unit ID.
-        Toast.makeText(this, TOAST_TEXT, Toast.LENGTH_LONG).show();
     }
 
 
