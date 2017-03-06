@@ -12,6 +12,8 @@ import com.google.android.gms.ads.AdView;
 
 import jp.co.rleaning.countindicator.databinding.ActivityScoreBinding;
 import jp.co.rleaning.countindicator.presenter.ScorePresenter;
+import jp.co.rleaning.countindicator.vo.Inning;
+import jp.co.rleaning.countindicator.vo.Score;
 import timber.log.Timber;
 
 public class ScoreActivity extends AppCompatActivity implements ScorePresenter {
@@ -20,8 +22,8 @@ public class ScoreActivity extends AppCompatActivity implements ScorePresenter {
             + "To show live ads, replace the ad unit ID in res/values/strings.xml with your own ad unit ID.";
     private final int INNING_DEFAULT = 1;
     private final int SCORE_DEFAULT = 0;
-    int mInning = INNING_DEFAULT;
-    int mScore = SCORE_DEFAULT;
+    Inning mInning = new Inning(INNING_DEFAULT);
+    Score mScore = new Score(SCORE_DEFAULT);
     ActivityScoreBinding binding;
 
     @Override
@@ -65,11 +67,7 @@ public class ScoreActivity extends AppCompatActivity implements ScorePresenter {
 
     @Override
     public void onClickInningPlus() {
-        mInning++;
-        if (mInning > 99) {
-            mInning = 99;
-        }
-        binding.inningTextView.setText(getString(R.string.inning,mInning));
+        binding.inningTextView.setText(getString(R.string.inning,mInning.increment()));
     }
 
     /**
@@ -77,11 +75,7 @@ public class ScoreActivity extends AppCompatActivity implements ScorePresenter {
      */
     @Override
     public void onClickInningMinus() {
-        mInning--;
-        if (mInning < 1) {
-            mInning = 1;
-        }
-        binding.inningTextView.setText(getString(R.string.inning,mInning));
+        binding.inningTextView.setText(getString(R.string.inning,mInning.decrement()));
     }
 
     /**
@@ -89,11 +83,7 @@ public class ScoreActivity extends AppCompatActivity implements ScorePresenter {
      */
     @Override
     public void onClickScorePlus() {
-        mScore++;
-        if (mScore > 99) {
-            mScore =99;
-        }
-        binding.scoreTextView.setText(getString(R.string.score, mScore));
+        binding.scoreTextView.setText(getString(R.string.score, mScore.increment()));
 
 
     }
@@ -103,11 +93,7 @@ public class ScoreActivity extends AppCompatActivity implements ScorePresenter {
      */
     @Override
     public void onClickScoreMinus() {
-        mScore--;
-        if (mScore < 0) {
-            mScore = 0;
-        }
-        binding.scoreTextView.setText(getString(R.string.score, mScore));
+        binding.scoreTextView.setText(getString(R.string.score, mScore.decrement()));
 
     }
 
