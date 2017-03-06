@@ -1,250 +1,258 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+xmlns:ads="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
     >
-    <data>
-        <variable
-            name="presenter"
-            type="jp.co.rleaning.countindicator.presenter.ScorePresenter"/>
-    </data>
+<data>
+    <variable
+        name="presenter"
+        type="jp.co.rleaning.countindicator.presenter.ScorePresenter"/>
+</data>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="jp.co.rleaning.countindicator.ScoreActivity">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="jp.co.rleaning.countindicator.ScoreActivity">
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/inning_layout"
+        >
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_above="@+id/inning_layout"
-            >
-
-            <TableLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true">
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-                    <Button
-                        android:text="@string/ball"
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/button9" />
-                    <View android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/circle_ball"/>
-
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/circle_ball"
-                        android:id="@+id/view3" />
-
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/circle_ball"
-                        android:id="@+id/view2" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-                    <Button
-                        android:text="@string/strike"
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/button10" />
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/circle_strike"
-                        android:id="@+id/view6" />
-
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/circle_strike"
-                        android:id="@+id/view5" />
-
-
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-                    <Button
-                        android:text="@string/out"
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/button11" />
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/circle_out"
-                        android:id="@+id/view8" />
-
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/circle_out"
-                        android:id="@+id/view7" />
-
-
-                </TableRow>
-
-            </TableLayout>
-        </RelativeLayout>
-
-
-        <!-- view for AdMob Banner Ad -->
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
+        <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            ads:adSize="BANNER"
-            ads:adUnitId="@string/banner_ad_unit_id" />
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            ads:srcCompat="@drawable/rl_logo"
-            android:layout_above="@+id/adView"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="25dp"
-            android:layout_marginEnd="25dp"
-            android:id="@+id/imageView2" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <Button
+                    android:text="@string/ball"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button9"
+                    android:onClick="@{() -> presenter.onClickB()}"/>
+                <View android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/circle_black"
+                    android:id="@+id/view3" />
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/circle_black"
+                    android:id="@+id/view2" />
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/circle_black"
+                    android:id="@+id/view1" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+                <Button
+                    android:text="@string/strike"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button10"
+                    android:onClick="@{() -> presenter.onClickS()}"/>
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/circle_black"
+                    android:id="@+id/view6" />
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/circle_black"
+                    android:id="@+id/view5" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+                <Button
+                    android:text="@string/out"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button11"
+                    android:onClick="@{() -> presenter.onClickO()}"/>
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/circle_black"
+                    android:id="@+id/view8" />
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/circle_black"
+                    android:id="@+id/view7" />
+
+
+            </TableRow>
+
+        </TableLayout>
+    </RelativeLayout>
+
+
+    <!-- view for AdMob Banner Ad -->
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:srcCompat="@drawable/rl_logo"
+        android:layout_above="@+id/adView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="25dp"
+        android:layout_marginEnd="25dp"
+        android:id="@+id/imageView2" />
+
+    <Button
+        android:text="Clear"
+        android:onClick="@{() -> presenter.onClear()}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView2"
+        android:layout_alignRight="@+id/adView"
+        android:layout_alignEnd="@+id/adView"
+        android:layout_marginBottom="14dp"
+        android:id="@+id/button3" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/toggleGroup"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/inning_layout">
 
         <Button
-            android:text="@string/clear"
-            android:layout_width="wrap_content"
+            android:text="-"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/imageView2"
-            android:layout_alignRight="@+id/adView"
-            android:layout_alignEnd="@+id/adView"
-            android:layout_marginBottom="14dp"
-            android:id="@+id/buttonClear" />
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/toggleGroup"
+            android:layout_alignBottom="@+id/button3"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:id="@+id/inning_layout">
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
+            android:id="@+id/button4"
+            android:layout_weight="1"
+            android:onClick="@{() -> presenter.onClickInningMinus()}"/>
 
-            <Button
-                android:text="@string/minus"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:onClick="@{() -> presenter.onClickInningMinus()}"
-                android:layout_marginLeft="13dp"
-                android:layout_marginStart="13dp"
-                android:id="@+id/button_inning_minus"
-                android:layout_weight="1" />
-
-            <TextView
-                android:text="@string/inning_default"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/inning_textView"
-                android:layout_weight="1" />
-
-            <Button
-                android:text="@string/plus"
-                android:onClick="@{() -> presenter.onClickInningPlus()}"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/button5"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
+        <TextView
+            android:text="@string/inning_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/buttonClear"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
+            android:id="@+id/inningTextView"
+            android:layout_weight="1" />
 
-            <Button
-                android:text="@string/minus"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="13dp"
-                android:layout_marginStart="13dp"
-                android:id="@+id/button_score_minus"
-                android:onClick="@{ () -> presenter.onClickScoreMinus()}"
-                android:layout_weight="1" />
-
-            <TextView
-                android:text="@string/score_default"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/score_textView"
-                android:layout_weight="1" />
-
-            <Button
-                android:text="@string/plus"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/button7"
-                android:onClick="@{ () -> presenter.onClickScorePlus()}"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-
-        <RadioGroup
-            android:id="@+id/toggleGroup"
-            android:layout_width="match_parent"
+        <Button
+            android:text="+"
+            android:onClick="@{() -> presenter.onClickInningPlus()}"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:weightSum="7"
-            android:orientation="vertical"
-            android:layout_above="@+id/buttonClear"
-            android:layout_alignRight="@+id/buttonClear"
-            android:layout_alignEnd="@+id/buttonClear"
-            android:layout_alignStart="@+id/buttonClear"
-            android:layout_marginRight="19dp"
-            android:layout_marginEnd="19dp"
-            android:layout_marginBottom="16dp"
-            android:layout_alignLeft="@+id/buttonClear">
+            android:id="@+id/button5"
+            android:layout_weight="1" />
+    </LinearLayout>
 
-            <RadioButton
-                android:text="@string/top"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:id="@+id/radiobutton_online"
-                android:layout_weight="3"
-                style="@style/DataViewRadioButton"
-                />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/button3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
-            <RadioButton
-                android:checked="true"
-                android:text="@string/bottom"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:id="@+id/radiobutton_offline"
-                android:layout_weight="3"
-                style="@style/DataViewRadioButton"
-                />
+        <Button
+            android:text="-"
+            android:onClick="@{() -> presenter.onClickScoreMinus()}"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/button3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
+            android:id="@+id/button6"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="@string/score_defult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/scoreText"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="+"
+            android:onClick="@{() -> presenter.onClickScorePlus()}"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button7"
+            android:layout_weight="1" />
+    </LinearLayout>
 
 
-        </RadioGroup>
+    <RadioGroup
+        android:id="@+id/toggleGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:weightSum="7"
+        android:orientation="vertical"
+        android:layout_above="@+id/button3"
+        android:layout_alignRight="@+id/button3"
+        android:layout_alignEnd="@+id/button3"
+        android:layout_marginRight="19dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="16dp">
+
+        <RadioButton
+            android:text="@string/top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/radiobutton_online"
+            android:layout_weight="3"
+            style="@style/DataViewRadioButton"
+            android:checked="true"
+            />
+
+        <RadioButton
+            android:text="@string/bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/radiobutton_offline"
+            android:layout_weight="3"
+            style="@style/DataViewRadioButton"
+            />
+
+
+    </RadioGroup>
 
 
 
-    </RelativeLayout>
+</RelativeLayout>
 </layout>
-
