@@ -1,23 +1,14 @@
 package jp.co.rleaning.countindicator;
 
 import android.databinding.DataBindingUtil;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-
-import android.view.View;
-import android.widget.Button;
-import android.widget.RadioGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
-import jp.co.rleaning.countindicator.databinding.ActivityMainBinding;
 import jp.co.rleaning.countindicator.databinding.ActivityScoreBinding;
 import jp.co.rleaning.countindicator.presenter.ScorePresenter;
 
@@ -31,9 +22,6 @@ public class ScoreActivity extends AppCompatActivity implements ScorePresenter {
     ActivityScoreBinding binding;
 
 
-    ActivityScoreBinding binding;
-    int mInning = 1;
-    int mScore = 0;
     int countB = 0;
     int countS = 0;
     int countO = 0;
